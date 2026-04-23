@@ -1,6 +1,6 @@
 'use client';
 
-import { BarChart3, Users, TrendingUp, DollarSign } from 'lucide-react';
+
 
 export default function Admin() {
   return (
@@ -16,7 +16,7 @@ export default function Admin() {
                 <p className="text-slate-400 text-sm">Total Users</p>
                 <p className="text-3xl font-bold text-white">1,234</p>
               </div>
-              <Users className="w-8 h-8 text-cyan-400" />
+              <span className="text-3xl">👥</span>
             </div>
           </div>
 
@@ -26,7 +26,7 @@ export default function Admin() {
                 <p className="text-slate-400 text-sm">Total Builds</p>
                 <p className="text-3xl font-bold text-white">5,678</p>
               </div>
-              <BarChart3 className="w-8 h-8 text-cyan-400" />
+              <span className="text-3xl">📊</span>
             </div>
           </div>
 
@@ -36,7 +36,7 @@ export default function Admin() {
                 <p className="text-slate-400 text-sm">Revenue (30d)</p>
                 <p className="text-3xl font-bold text-white">$45,230</p>
               </div>
-              <DollarSign className="w-8 h-8 text-cyan-400" />
+              <span className="text-3xl">💵</span>
             </div>
           </div>
 
@@ -46,7 +46,7 @@ export default function Admin() {
                 <p className="text-slate-400 text-sm">Growth (30d)</p>
                 <p className="text-3xl font-bold text-white">+23%</p>
               </div>
-              <TrendingUp className="w-8 h-8 text-cyan-400" />
+              <span className="text-3xl">📈</span>
             </div>
           </div>
         </div>

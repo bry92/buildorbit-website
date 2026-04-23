@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, Zap, Code, Rocket, Users, TrendingUp, Shield } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -56,7 +55,7 @@ export default function Home() {
               href="/signup"
               className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg hover:shadow-cyan-500/50 transition flex items-center justify-center gap-2"
             >
-              Start Building Free <ArrowRight className="w-5 h-5" />
+              Start Building Free →
             </Link>
             <Link
               href="/docs"
@@ -95,8 +94,8 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Feature 1 */}
             <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-8 hover:border-cyan-500/50 transition">
-              <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mb-4">
-                <Zap className="w-6 h-6 text-cyan-400" />
+              <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mb-4 text-2xl">
+                ⚡
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Lightning Fast</h3>
               <p className="text-slate-300">Generate complete apps in minutes using AI. No more waiting days for development.</p>
@@ -104,8 +103,8 @@ export default function Home() {
 
             {/* Feature 2 */}
             <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-8 hover:border-cyan-500/50 transition">
-              <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mb-4">
-                <Code className="w-6 h-6 text-cyan-400" />
+              <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mb-4 text-2xl">
+                💻
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Full Source Code</h3>
               <p className="text-slate-300">Get complete, production-ready source code. Customize, deploy, and own your application.</p>
@@ -113,8 +112,8 @@ export default function Home() {
 
             {/* Feature 3 */}
             <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-8 hover:border-cyan-500/50 transition">
-              <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mb-4">
-                <Rocket className="w-6 h-6 text-cyan-400" />
+              <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mb-4 text-2xl">
+                🚀
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Deploy Anywhere</h3>
               <p className="text-slate-300">Docker, Kubernetes, Vercel, AWS — deploy to any platform with included configurations.</p>
@@ -122,8 +121,8 @@ export default function Home() {
 
             {/* Feature 4 */}
             <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-8 hover:border-cyan-500/50 transition">
-              <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mb-4">
-                <Users className="w-6 h-6 text-cyan-400" />
+              <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mb-4 text-2xl">
+                👥
               </div>
               <h3 className="text-xl font-bold text-white mb-2">All App Types</h3>
               <p className="text-slate-300">Web apps, mobile apps, full-stack platforms, landing pages, and more.</p>
@@ -131,8 +130,8 @@ export default function Home() {
 
             {/* Feature 5 */}
             <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-8 hover:border-cyan-500/50 transition">
-              <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mb-4">
-                <TrendingUp className="w-6 h-6 text-cyan-400" />
+              <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mb-4 text-2xl">
+                📈
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Scalable Architecture</h3>
               <p className="text-slate-300">Built for scale with microservices, caching, load balancing, and real-time features.</p>
@@ -140,8 +139,8 @@ export default function Home() {
 
             {/* Feature 6 */}
             <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-8 hover:border-cyan-500/50 transition">
-              <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mb-4">
-                <Shield className="w-6 h-6 text-cyan-400" />
+              <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mb-4 text-2xl">
+                🛡️
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Enterprise Security</h3>
               <p className="text-slate-300">GDPR, HIPAA, SOC 2, PCI DSS compliance built-in. Security by default.</p>

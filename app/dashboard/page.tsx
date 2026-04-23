@@ -1,9 +1,38 @@
 'use client';
 
 import Link from 'next/link';
-import { Plus, Zap, Users, TrendingUp } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import BuildsPage from './builds';
 
 export default function Dashboard() {
+  const [stats, setStats] = useState({
+    credits: 10,
+    builds: 0,
+    referrals: 0,
+    trial_days_left: 3,
+  });
+
+  useEffect(() => {
+    // Fetch user stats from API
+    const fetchStats = async () => {
+      try {
+        const response = await fetch('/api/v1/user', {
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`,
+          },
+        });
+        if (response.ok) {
+          const data = await response.json();
+          setStats(data);
+        }
+      } catch (err) {
+        console.error('Failed to fetch stats:', err);
+      }
+    };
+
+    fetchStats();
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 pt-20">
       <div className="max-w-7xl mx-auto px-6 py-8">
@@ -14,10 +43,10 @@ export default function Dashboard() {
             <p className="text-slate-400 mt-2">Welcome back! Here's your BuildOrbit overview.</p>
           </div>
           <Link
-            href="/dashboard/new-build"
+            href="/builder"
             className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-3 rounded-lg font-bold flex items-center gap-2 hover:shadow-lg hover:shadow-cyan-500/50 transition"
           >
-            <Plus className="w-5 h-5" /> New Build
+            <span>➕</span> New Build
           </Link>
         </div>
 
@@ -27,9 +56,9 @@ export default function Dashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-slate-400 text-sm">Credits</p>
-                <p className="text-3xl font-bold text-white">10</p>
+                <p className="text-3xl font-bold text-white">{stats.credits}</p>
               </div>
-              <Zap className="w-8 h-8 text-cyan-400" />
+              <span className="text-3xl">⚡</span>
             </div>
           </div>
 
@@ -37,9 +66,9 @@ export default function Dashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-slate-400 text-sm">Builds</p>
-                <p className="text-3xl font-bold text-white">0</p>
+                <p className="text-3xl font-bold text-white">{stats.builds}</p>
               </div>
-              <Plus className="w-8 h-8 text-cyan-400" />
+              <span className="text-3xl">📦</span>
             </div>
           </div>
 
@@ -47,9 +76,9 @@ export default function Dashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-slate-400 text-sm">Referrals</p>
-                <p className="text-3xl font-bold text-white">0</p>
+                <p className="text-3xl font-bold text-white">{stats.referrals}</p>
               </div>
-              <Users className="w-8 h-8 text-cyan-400" />
+              <span className="text-3xl">👥</span>
             </div>
           </div>
 
@@ -57,25 +86,16 @@ export default function Dashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-slate-400 text-sm">Trial Days Left</p>
-                <p className="text-3xl font-bold text-white">3</p>
+                <p className="text-3xl font-bold text-white">{stats.trial_days_left}</p>
               </div>
-              <TrendingUp className="w-8 h-8 text-cyan-400" />
+              <span className="text-3xl">⏱️</span>
             </div>
           </div>
         </div>
 
-        {/* Recent Builds */}
+        {/* Builds Section */}
         <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-8">
-          <h2 className="text-2xl font-bold text-white mb-6">Recent Builds</h2>
-          <div className="text-center py-12">
-            <p className="text-slate-400 mb-4">No builds yet. Create your first one!</p>
-            <Link
-              href="/dashboard/new-build"
-              className="inline-block bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:shadow-lg hover:shadow-cyan-500/50 transition"
-            >
-              Create Build
-            </Link>
-          </div>
+          <BuildsPage />
         </div>
       </div>
     </div>
